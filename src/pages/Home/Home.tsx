@@ -1,10 +1,11 @@
 import React from 'react';
+import { Container, PhotosContainer } from './Home.styles';
 
 const Home = () => {
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <Container>
+      <PhotosContainer />
+    </Container>
   );
 };
 
