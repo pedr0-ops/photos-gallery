@@ -6,7 +6,7 @@ const ImagesService = {
     const accesKey = '8x-WCYpHUVmQbmQbSdcTixg6LeTXYcPjBiXuCy_IGZo';
 
    // `https://api.unsplash.com/search/photos?client_id=${accesKey}&per_page=${limit}&query=${searchQuery}`
-   const response = await axios.get<GetImagesResponse>('');
+   const response = await axios.get<GetImagesResponse>(`https://api.unsplash.com/search/photos?client_id=${accesKey}&per_page=${limit}&query=${searchQuery}`);
   
     return response.data;
   }

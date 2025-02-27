@@ -1,6 +1,8 @@
 import styled from 'styled-components';
+import { IPhotoContainerProps } from './Home.types';
+import { ImageUrlType } from '../../services/imagesService/imagesService.types';
 
-export const Container = styled.div`
+export const Container = styled.div<IPhotoContainerProps>`
 height: 100vh;
 display: flex;
 overflow: hidden;
@@ -9,9 +11,11 @@ padding-top: 60px;
 align-items: start;
 justify-content: center;
 
-background-image:  url("https://i0.wp.com/pachecos.com/wp-content/uploads/2024/05/Sala-de-Estar-Pachecos-Mobiliario.jpg?fit=2000%2C1500&ssl=1")  ;
+background-image:  url(${(props) => props.image.urls[ImageUrlType.FULL]});
 background-size: cover;
 `;
+
+
 
 
 export const PhotosContainer = styled.div`
