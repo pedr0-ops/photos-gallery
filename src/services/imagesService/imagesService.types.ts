@@ -13,9 +13,9 @@ export enum ImageUrlType {
 export interface IImage {
  urls : {
   [ImageUrlType.FULL]: string;
-  [ ImageUrlType.REGULAR]: string;
+  [ImageUrlType.REGULAR]: string;
   [ImageUrlType.SMALL]: string;
-  [ ImageUrlType.THUMB]: string;
+  [ImageUrlType.THUMB]: string;
  };
 
  alt_description: string;
