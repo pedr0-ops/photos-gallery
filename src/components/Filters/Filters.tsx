@@ -8,9 +8,9 @@ const Filters = ({ onFilterChange = () => null }: IFiltersProps) => {
 
   const filterOptions: FilterOption[] = [
     { label: 'Animais', value: '1' },
-    { label: 'Natureza', value: '2' },
-    { label: 'Grandes cidades', value: '3' },
-    { label: 'Imagens incriveis', value: '4' },
+    { label: 'Filmes', value: '2' },
+    { label: 'Fotografia de Rua', value: '3' },
+    { label: 'Viajar', value: '4' },
   ];
 
   const handleFilterChange = (filter: FilterOption) => {

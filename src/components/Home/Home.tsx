@@ -6,34 +6,36 @@ import { IImage, ImageUrlType } from '../../services/imagesService/imagesService
 import { toast, ToastContainer } from 'react-toastify';
 import Filters from '../Filters/Filters';
 import { FilterOption } from '../Filters/Filters.types';
+import { useQuery } from 'react-query';
+import { QUERY_PATHS } from '../../common/queryPaths';
 
 const Home = () => {
   const [images, setImages] = React.useState<IImage[]>();
   const [filter, setFilter] = React.useState<string>('Animais');
 
-  const getImages = useCallback(async () => {
-    try {
-      const response = await ImagesService.getImages({ limit: 9, searchQuery: filter });
-      setImages(response.results);
-    } catch {
-      toast.error('Erro ao buscar imagens, tente novamente mais tarde.');
+  const { isLoading } = useQuery(
+    [QUERY_PATHS.GET_ALL_IMAGES, filter],
+    () =>
+      ImagesService.getImages({
+        limit: 12,
+        searchQuery: filter,
+      }),
+    {
+      onSuccess: (data) => setImages(data.results),
+      onError: () => toast.error('Erro ao carregar as empresas, tente novamente.'),
     }
-  }, [filter]);
+  );
 
   const handleFilterChange = (filter: FilterOption) => {
     setFilter(filter.label);
   };
-
-  useEffect(() => {
-    getImages();
-  }, [getImages]);
 
   if (!images) {
     return <div>Carregando...</div>;
   }
 
   return (
-    <Container imageUrl={images?.[0].urls[ImageUrlType.FULL] ?? ''}>
+    <Container>
       <PhotosContainer>
         {images?.map((image) => (
           <PhotosCard key={image.id} image={image} />
