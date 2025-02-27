@@ -9,7 +9,8 @@ padding-top: 60px;
 align-items: start;
 justify-content: center;
 
-background-color: black;
+background-image:  url("https://i0.wp.com/pachecos.com/wp-content/uploads/2024/05/Sala-de-Estar-Pachecos-Mobiliario.jpg?fit=2000%2C1500&ssl=1")  ;
+background-size: cover;
 `;
 
 
@@ -25,10 +26,7 @@ export const PhotosContainer = styled.div`
   background: rgba(0, 0, 0, 0.3); /* Para dar um efeito de vidro */
   backdrop-filter: blur(10px); /* Para o efeito fosco */
 
-
   border-radius: 40px;
-  border: 1px inset   white;
-  /* border-left: 2px outset   white;
-  border-bottom: 2px inset   white;
-  border-right: 2px inset   white; */
+  border: 1px inset white;
+  
 `;
