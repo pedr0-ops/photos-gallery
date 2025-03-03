@@ -2710,6 +2710,13 @@
     "@types/qs" "*"
     "@types/serve-static" "*"
 
+"@types/fslightbox-react@^1.7.8":
+  version "1.7.8"
+  resolved "https://registry.yarnpkg.com/@types/fslightbox-react/-/fslightbox-react-1.7.8.tgz#aadd75fca72a18c737534df4153af4dfb4651ef5"
+  integrity sha512-98lYTJS5n2osLdxVqZ0Kwg8TUDzsLqDaY/kNb/1PlxmJ8xbxEK1a3gHQUoz0cFSusDAH8bV40IvqdhndVFtYdw==
+  dependencies:
+    "@types/react" "*"
+
 "@types/graceful-fs@^4.1.2":
   version "4.1.9"
   resolved "https://registry.npmjs.org/@types/graceful-fs/-/graceful-fs-4.1.9.tgz"
@@ -5630,6 +5637,11 @@ fsevents@^2.3.2, fsevents@~2.3.2:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.3.tgz#cac6407785d03675a2a5e1a5305c697b347d90d6"
   integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
+
+fslightbox-react@^1.7.6:
+  version "1.7.6"
+  resolved "https://registry.yarnpkg.com/fslightbox-react/-/fslightbox-react-1.7.6.tgz#eb9565e1f836b647cdbdf4734705222ca542dbd3"
+  integrity sha512-7LN2GZRLHo2vZGKdH+BZDJUoUDkCRCLlZ5hOwtLtZplmGZQ9nqzpG54cTax7XNjbYGTWLT6BHdMiL5zOEhiRlA==
 
 function-bind@^1.1.2:
   version "1.1.2"

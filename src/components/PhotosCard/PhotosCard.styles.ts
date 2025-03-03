@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CardContainer = styled.div`
+export const CardContainer = styled.button`
   display: flex;
   border-radius: 30px;
   height: 13.125em;
