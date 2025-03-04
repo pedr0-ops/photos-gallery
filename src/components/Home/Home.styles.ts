@@ -21,14 +21,15 @@ background-size: cover;
 export const PhotosContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  overflow-y: auto;
   gap: 1.25rem;
-  padding: 3.75rem;
 
   align-items: center;
   justify-content: center;
 
-  width: 70%;
+  width: 80%;
   height: 80%;
+  padding: 2.5rem;
 
   background: rgba(0, 0, 0, 0.3); 
   backdrop-filter: blur(10px); 
@@ -36,16 +37,33 @@ export const PhotosContainer = styled.div`
   border-radius: 40px;
   border: 1px inset white;
 
+
+  @media (max-width: 1600px) {
+    width: 100%;
+    grid-template-columns: repeat(4 , 1fr);
+    padding: 2.5rem;  
+  }
+
+  @media (max-width: 1300px) {
+    width: 90%;
+    grid-template-columns: repeat(3 , 1fr);
+    padding: 2.5rem;  
+  }
+
   @media (max-width: 1024px) {
+    width: 95%;
     grid-template-columns: repeat(3, 1fr);
+    padding: 2.5rem;  
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem;
   }
 
   @media (max-width: 480px) {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    padding: 1.5rem;
   }
   
 `;

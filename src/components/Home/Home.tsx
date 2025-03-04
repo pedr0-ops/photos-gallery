@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import { Container, PhotosContainer } from './Home.styles';
 import ImagesService from '../../services/imagesService/imagesService';
 import PhotosCard from '../PhotosCard/PhotosCard';
@@ -12,7 +12,10 @@ import FsLightbox from 'fslightbox-react';
 
 const Home = () => {
   const [images, setImages] = React.useState<IImage[]>();
-  const [openGallery, setOpenGallery] = React.useState<boolean>(false);
+  const [lightboxController, setLightboxController] = useState({
+    toggler: false,
+    slide: 1,
+  });
   const [filter, setFilter] = React.useState<string>('Animais');
 
   const { isLoading, data } = useQuery(
@@ -32,13 +35,15 @@ const Home = () => {
     setFilter(filter.label);
   };
 
-  const handleOpenGallery = () => {
-    console.log('open gallery');
-    setOpenGallery(true);
+  const handleOpenGallery = (slide: number) => {
+    setLightboxController({
+      toggler: !lightboxController.toggler,
+      slide: slide + 1,
+    });
   };
 
   const getImagesUrl = () => {
-    return data?.results.map((image: IImage) => image.urls[ImageUrlType.REGULAR]);
+    return images?.map((image: IImage) => image.urls[ImageUrlType.REGULAR]);
   };
 
   if (!images) {
@@ -48,8 +53,8 @@ const Home = () => {
   return (
     <Container>
       <PhotosContainer>
-        {images?.map((image) => (
-          <PhotosCard key={image.id} image={image} openGallery={handleOpenGallery} />
+        {images?.map((image, index) => (
+          <PhotosCard key={image.id} image={image} openGallery={() => handleOpenGallery(index)} />
         ))}
 
         <ToastContainer
@@ -66,7 +71,7 @@ const Home = () => {
       </PhotosContainer>
       <Filters onFilterChange={handleFilterChange} />
 
-      <FsLightbox toggler={openGallery} sources={getImagesUrl()} />
+      <FsLightbox toggler={lightboxController.toggler} sources={getImagesUrl()} slide={lightboxController.slide} />
     </Container>
   );
 };

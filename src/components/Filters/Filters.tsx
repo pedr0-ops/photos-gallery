@@ -1,6 +1,6 @@
 import { Flex, RadioCards } from '@radix-ui/themes';
 import React from 'react';
-import { Label, RadioCard, RadioContainer } from './Filters.styles';
+import { Label, RadioCard, RadioContainer, RadioRoot } from './Filters.styles';
 import { FilterOption, IFiltersProps } from './Filters.types';
 
 const Filters = ({ onFilterChange = () => null }: IFiltersProps) => {
@@ -20,7 +20,7 @@ const Filters = ({ onFilterChange = () => null }: IFiltersProps) => {
 
   return (
     <RadioContainer>
-      <RadioCards.Root defaultValue={selectedFilter.value} columns={{ initial: '1', sm: '4' }}>
+      <RadioRoot defaultValue={selectedFilter.value} columns={{ initial: '1', sm: '4' }}>
         {filterOptions.map((option) => (
           <RadioCard key={option.value} value={option.value} onClick={() => handleFilterChange(option)}>
             <Flex direction="column" width="100%">
@@ -28,7 +28,7 @@ const Filters = ({ onFilterChange = () => null }: IFiltersProps) => {
             </Flex>
           </RadioCard>
         ))}
-      </RadioCards.Root>
+      </RadioRoot>
     </RadioContainer>
   );
 };

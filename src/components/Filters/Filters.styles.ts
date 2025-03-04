@@ -12,7 +12,24 @@ border: 1px inset white;
 
 border-radius: 40px;
 padding: 10px;
- 
+
+`;
+
+
+export const RadioRoot = styled(RadioCards.Root)`
+
+@media (max-width: 768px) {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 2px;
+  }
+
+@media (max-width: 480px) {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 2px;
+}
+   
 `;
 
 export const RadioCard = styled(RadioCards.Item)`
@@ -36,5 +53,9 @@ export const Label = styled(Text)`
   color: white;
   font-weight: bold;
   text-align: center;
+
+  @media (max-width: 480px) {
+    font-size: 0.5em;
+  }
  
 `
