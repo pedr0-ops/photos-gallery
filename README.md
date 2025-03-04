@@ -47,12 +47,6 @@ yarn build
 ```
 Os arquivos otimizados ficarão na pasta `build`.
 
-## 📜 Licença
 
-Este projeto está sob a licença MIT. Sinta-se à vontade para utilizá-lo e modificá-lo conforme necessário.
-
----
-
-💡 *Sugestões e contribuições são bem-vindas!* ✨
 
 
