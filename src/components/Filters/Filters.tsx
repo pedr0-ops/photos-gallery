@@ -1,4 +1,4 @@
-import { Flex, RadioCards } from '@radix-ui/themes';
+import { Flex } from '@radix-ui/themes';
 import React from 'react';
 import { Label, RadioCard, RadioContainer, RadioRoot } from './Filters.styles';
 import { FilterOption, IFiltersProps } from './Filters.types';

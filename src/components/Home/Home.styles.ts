@@ -13,10 +13,8 @@ justify-content: center;
 
 background-image:  url('https://plus.unsplash.com/premium_photo-1729862340021-0ba08c7fd833?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
 background-size: cover;
+
 `;
-
-
-
 
 export const PhotosContainer = styled.div`
   display: grid;
@@ -37,6 +35,17 @@ export const PhotosContainer = styled.div`
   border-radius: 40px;
   border: 1px inset white;
 
+  
+  animation: fadeIn 0.5s ease-in-out forwards;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
   @media (max-width: 1600px) {
     width: 100%;
@@ -46,7 +55,7 @@ export const PhotosContainer = styled.div`
 
   @media (max-width: 1300px) {
     width: 90%;
-    grid-template-columns: repeat(3 , 1fr);
+    grid-template-columns: repeat(4 , 1fr);
     padding: 2.5rem;  
   }
 

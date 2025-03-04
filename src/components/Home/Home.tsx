@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Container, PhotosContainer } from './Home.styles';
 import ImagesService from '../../services/imagesService/imagesService';
 import PhotosCard from '../PhotosCard/PhotosCard';
@@ -9,6 +9,9 @@ import { FilterOption } from '../Filters/Filters.types';
 import { useQuery } from 'react-query';
 import { QUERY_PATHS } from '../../common/queryPaths';
 import FsLightbox from 'fslightbox-react';
+import SkeletonCard from '../SkeletonCard/SkeletonCard';
+
+const IMAGE_LIMIT = 12;
 
 const Home = () => {
   const [images, setImages] = React.useState<IImage[]>();
@@ -18,7 +21,7 @@ const Home = () => {
   });
   const [filter, setFilter] = React.useState<string>('Animais');
 
-  const { isLoading, data } = useQuery(
+  const { isLoading } = useQuery(
     [QUERY_PATHS.GET_ALL_IMAGES, filter],
     () =>
       ImagesService.getImages({
@@ -46,16 +49,14 @@ const Home = () => {
     return images?.map((image: IImage) => image.urls[ImageUrlType.REGULAR]);
   };
 
-  if (!images) {
-    return <div>Carregando...</div>;
-  }
-
   return (
     <Container>
-      <PhotosContainer>
-        {images?.map((image, index) => (
-          <PhotosCard key={image.id} image={image} openGallery={() => handleOpenGallery(index)} />
-        ))}
+      <PhotosContainer key={filter}>
+        {isLoading
+          ? Array.from({ length: IMAGE_LIMIT }).map((_, index) => <SkeletonCard key={index} />)
+          : images?.map((image, index) => (
+              <PhotosCard key={image.id} image={image} openGallery={() => handleOpenGallery(index)} />
+            ))}
 
         <ToastContainer
           position="top-right"
