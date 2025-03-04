@@ -11,7 +11,7 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 
-background-image:  url('https://plus.unsplash.com/premium_photo-1729862340021-0ba08c7fd833?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+background-image:  url('https://www.supercamera.com.br/y/1296/fotos-rua-e1603992704490-600.webp');
 background-size: cover;
 
 `;
