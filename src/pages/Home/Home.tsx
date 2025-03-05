@@ -5,7 +5,7 @@ import PhotosCard from '../../components/PhotosCard/PhotosCard';
 import { IImage, ImageUrlType } from '../../services/imagesService/imagesService.types';
 import { toast, ToastContainer } from 'react-toastify';
 import Filters from '../../components/Filters/Filters';
-import { FilterOption } from '../../components/Filters/Filters.types';
+import { FilterOption, FilterType } from '../../components/Filters/Filters.types';
 import { useQuery } from 'react-query';
 import { QUERY_PATHS } from '../../common/queryPaths';
 import FsLightbox from 'fslightbox-react';
@@ -19,7 +19,7 @@ const Home = () => {
     toggler: false,
     slide: 1,
   });
-  const [filter, setFilter] = React.useState<string>('Animais');
+  const [filter, setFilter] = React.useState<string>(FilterType.MOVIES);
 
   const { isLoading } = useQuery(
     [QUERY_PATHS.GET_ALL_IMAGES, filter],

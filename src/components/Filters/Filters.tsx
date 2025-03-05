@@ -1,16 +1,16 @@
 import { Flex } from '@radix-ui/themes';
 import React from 'react';
 import { Label, RadioCard, RadioContainer, RadioRoot } from './Filters.styles';
-import { FilterOption, IFiltersProps } from './Filters.types';
+import { FilterOption, FilterType, IFiltersProps } from './Filters.types';
 
 const Filters = ({ onFilterChange = () => null }: IFiltersProps) => {
-  const [selectedFilter, setSelectedFilter] = React.useState<FilterOption>({ label: 'Animais', value: '1' });
+  const [selectedFilter, setSelectedFilter] = React.useState<FilterOption>({ label: FilterType.MOVIES, value: '1' });
 
   const filterOptions: FilterOption[] = [
-    { label: 'Animais', value: '1' },
-    { label: 'Filmes', value: '2' },
-    { label: 'Fotografia de Rua', value: '3' },
-    { label: 'Viajar', value: '4' },
+    { label: FilterType.MOVIES, value: '1' },
+    { label: FilterType.ANIMALS, value: '2' },
+    { label: FilterType.STREET_PHOTOGRAPHY, value: '3' },
+    { label: FilterType.TRAVEL, value: '4' },
   ];
 
   const handleFilterChange = (filter: FilterOption) => {

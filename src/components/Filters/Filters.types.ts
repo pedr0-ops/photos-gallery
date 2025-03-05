@@ -3,6 +3,13 @@ export interface FilterOption {
   value: string;
 }
 
+export enum FilterType {
+  ANIMALS = 'Animais',
+  MOVIES = 'Filmes',
+  STREET_PHOTOGRAPHY = 'Fotografia de Rua',
+  TRAVEL = 'Viajar',
+}
+
 export interface IFiltersProps {
   onFilterChange?: (filter: FilterOption) => void;
 }
