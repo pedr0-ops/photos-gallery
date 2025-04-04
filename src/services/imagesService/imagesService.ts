@@ -1,4 +1,4 @@
-import { GetImagesRequest, GetImagesResponse } from './imagesService.types';
+import { GetImagesRequest, GetImagesResponse } from './ImagesService.types';
 import axios from 'axios';
 
 const ImagesService = {

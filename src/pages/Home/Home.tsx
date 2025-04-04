@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Container, PhotosContainer } from './Home.styles';
-import ImagesService from '../../services/imagesService/imagesService';
+import ImagesService from '../../services/imagesService/ImagesService';
 import PhotosCard from '../../components/PhotosCard/PhotosCard';
-import { IImage, ImageUrlType } from '../../services/imagesService/imagesService.types';
+import { IImage, ImageUrlType } from '../../services/imagesService/ImagesService.types';
 import { toast, ToastContainer } from 'react-toastify';
 import Filters from '../../components/Filters/Filters';
 import { FilterOption, FilterType } from '../../components/Filters/Filters.types';

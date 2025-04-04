@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import PhotosCard from './PhotosCard';
-import { ImageUrlType, IImage } from '../../services/imagesService/imagesService.types';
+import { ImageUrlType, IImage } from '../../services/imagesService/ImagesService.types';
 
 const mockImage: IImage = {
   urls: {

@@ -10,6 +10,7 @@ export enum ImageUrlType {
   THUMB = 'thumb',
 }
 
+
 export interface IImage {
   urls: {
     [ImageUrlType.FULL]: string;

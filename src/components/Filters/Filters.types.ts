@@ -13,3 +13,14 @@ export enum FilterType {
 export interface IFiltersProps {
   onFilterChange?: (filter: FilterOption) => void;
 }
+
+
+export interface RadioCardItemPropsMock {
+  children: React.ReactNode;
+  value: string;
+  onClick?: React.MouseEventHandler;
+  checked?: boolean;
+  defaultChecked?: boolean;
+  name?: string;
+  disabled?: boolean;
+}

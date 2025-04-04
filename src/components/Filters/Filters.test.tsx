@@ -1,24 +1,14 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Filters from './Filters';
-import { FilterType } from './Filters.types';
-
-interface RadioCardItemProps {
-  children: React.ReactNode;
-  value: string;
-  onClick?: React.MouseEventHandler;
-  checked?: boolean;
-  defaultChecked?: boolean;
-  name?: string;
-  disabled?: boolean;
-}
+import { FilterType, RadioCardItemPropsMock } from './Filters.types';
 
 jest.mock('@radix-ui/themes', () => ({
   Flex: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
   Box: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
   RadioCards: {
     Root: ({ children }: { children: React.ReactNode }) => <div role="radiogroup">{children}</div>,
-    Item: ({ children, value, onClick, checked, defaultChecked, name, disabled }: RadioCardItemProps) => (
+    Item: ({ children, value, onClick, checked, defaultChecked, name, disabled }: RadioCardItemPropsMock) => (
       <div>
         <input
           type="radio"

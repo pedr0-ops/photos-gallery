@@ -1,4 +1,4 @@
-import { IImage } from '../../services/imagesService/imagesService.types';
+import { IImage } from '../../services/imagesService/ImagesService.types';
 
 export interface IPhotosCardProps {
   image: IImage;
