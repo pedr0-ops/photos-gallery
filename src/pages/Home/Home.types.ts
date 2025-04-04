@@ -3,6 +3,6 @@ export interface IPhotoContainerProps {
 }
 
 export interface ImageGallery {
- src: string;
- alt: string;
+  src: string;
+  alt: string;
 }

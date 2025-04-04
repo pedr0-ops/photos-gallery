@@ -28,4 +28,3 @@ export const CardContainer = styled.button`
     background-color: rgba(69, 68, 68, 0.5);
   }
 `;
-

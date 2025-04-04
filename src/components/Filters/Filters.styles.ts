@@ -1,5 +1,5 @@
-import { Box, RadioCards, Text } from "@radix-ui/themes";
-import styled from "styled-components";
+import { Box, RadioCards, Text } from '@radix-ui/themes';
+import styled from 'styled-components';
 
 export const RadioContainer = styled(Box)`
 margin-top: -30px;
@@ -14,7 +14,6 @@ border-radius: 40px;
 padding: 10px;
 
 `;
-
 
 export const RadioRoot = styled(RadioCards.Root)`
 
@@ -58,4 +57,4 @@ export const Label = styled(Text)`
     font-size: 0.5em;
   }
  
-`
+`;

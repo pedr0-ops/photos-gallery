@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 export const Container = styled.div`
 height: 100vh;
 display: flex;
@@ -11,7 +10,7 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 
-background-image:  url('https://www.supercamera.com.br/y/1296/fotos-rua-e1603992704490-600.webp');
+background-image:  url('https://img.freepik.com/fotos-premium/atmosfera-pacifica-de-uma-livraria-aconchegante-com-prateleiras-de-livros_1417-32896.jpg');
 background-size: cover;
 
 `;
