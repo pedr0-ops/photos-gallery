@@ -14,7 +14,6 @@ export interface IFiltersProps {
   onFilterChange?: (filter: FilterOption) => void;
 }
 
-
 export interface RadioCardItemPropsMock {
   children: React.ReactNode;
   value: string;
